@@ -5,13 +5,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans">
     <link rel="stylesheet" href="myself-css.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['DM Sans', 'sans-serif'],
+                }
+            },
+        }
+    </script>
 	<title>Random Sentence Generation</title>
 </head>
-<body>
-    <h1>Random Sentence Generation</h1>
-    <p>Click the button below to generate a random sentence:</p>
-    <button id="generate-button">Generate Sentence</button>
-    <p id="random-sentence"></p>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+    <h1 class="text-3xl font-bold mt-4 mb-3">Random Sentence Generation</h1>
+    <p class="my-3 text-lg font-semibold">Click the button below to generate a random sentence:</p>
+    <button id="generate-button" class="bg-violet-400 hover:bg-violet-500 hover:scale-105 text-white font-bold py-2 px-4 my-3 rounded transition duration-200 ease-out">Generate Sentence</button>
+    <p id="random-sentence" class="my-3">Waiting on a sentence to be generated...</p>
+    <div class="grid grid-cols-2 gap-4 mt-4 w-full max-w-2xl"> 
+        <textarea id="adjectives" placeholder="Enter adjectives (comma-separated)"></textarea>
+        <textarea id="nouns" placeholder="Enter nouns (comma-separated)"></textarea>
+        <textarea id="verbs" placeholder="Enter verbs (comma-separated)"></textarea>
+        <textarea id="adverbs" placeholder="Enter adverbs (comma-separated)"></textarea>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
